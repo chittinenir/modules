@@ -1,0 +1,9 @@
+class wordpress::config inherits wordpress {
+
+file { '/var/www/html/wordpress/wp-config.php':
+source       => '/tmp/wp-config-sample.php'
+}
+ file { "/tmp/wp-config-sample.php" :
+source => "puppet:///modules/modules/wordpress/wp-config-sample.php"
+}
+ 
